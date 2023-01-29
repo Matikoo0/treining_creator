@@ -1,0 +1,57 @@
+API CWICZENIA
+
+$$$GET$$$
+exc/ #wyswietla cwiczenia wszystkie
+exc/name/<name> #wyswietla cwiczenia po nazwie
+exc/trener_id/<trener_id> #wyswietla cwiczenia po id trenera
+exc/trener_id_and_name/<trener_id>/<name> #wyswietla cwiczenia o podanej nazwie przypisane do trenera o id trener_id
+
+$$$POST$$$
+exc/ #dodaje dane pod schematem
+{"name" : "wyciskanie","url" : "google.com","zaang" : "klata=1,triceps=0.5","trener_id":"1"}
+
+$$$PUT$$$
+exc/<ID> #update exc where ID, dane pod schematem
+{"name" : "wyciskanie","url" : "google.com","zaang" : "klata=1,triceps=0.5","trener_id":"1"}
+
+$$$DELETE$$$
+exc/<ID>  #usuwa cwiczenia po id
+//////////////////////////////////////////////////////////////////////////////
+API TRENER
+
+$$$GET$$$
+trener/ #wyswietla trenerow
+trener/id/<ID> # wyswietla trenera po id
+trener/email/<email> #wyswietla trenera po email
+trener/surname/<surname> #wyswietla trenerow po nazwisku
+
+$$$POST$$$
+trener/ #dodaje dane wedle schematu
+{"name" : "mateusz","surname" : "Krajewski","email" : "matikrajek42@gmail.com","password":"1234"}
+
+$$$PUT$$$
+trener/<ID> #update trener where ID by schema
+{"name" : "mateusz","surname" : "Krajewski","email" : "matikrajek42@gmail.com","password":"1234"}
+
+$$$DELETE$$$
+trener/<ID> #usuwa trenera po id
+//////////////////////////////////////////////////////////////
+API USERS
+
+$$$GET$$$
+/user #wyswietla uzytkownikow
+/user/id/<ID> #wyswietla uzytkownikow po id
+/user/email/<email> #wyswietla uzytkownikow po id
+/user/trener_id/<trener_id> #wyswietla uzytkownikow po trener_id
+/user/surname/<surname> #wyswietla uzytkownikow po nazwisku
+
+$$$POST$$$
+/user #dodaje dane wedle schematu
+{'id':self.id,'name':self.name,'surname':self.surname,'email':self.email,'password':self.password,'trener_id':self.trener_id}
+
+$$$PUT$$$
+/user/<id> #upgrade user by id
+{name':self.name,'surname':self.surname,'email':self.email,'password':self.password,'trener_id':self.trener_id}
+
+$$$DELETE$$$
+/user/<ID> #usuwa uzytkownika po id
