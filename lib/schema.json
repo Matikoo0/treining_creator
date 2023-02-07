@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "ID"
+        },
+        "trener_id": {
+            "type": "ID"
+        },
+        "user_id": {
+            "type": "ID"
+        },
+        "ends": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "weeks": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "number"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "required": ["id", "trener_id", "user_id", "ends", "weeks"]
+}

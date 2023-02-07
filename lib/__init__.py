@@ -1,3 +1,3 @@
-from .alert_bot.api import *
-from .validator.main import *
-from configReader.main import getConfig
+from .validator import *
+from .config import getConfig
+from .db import *
