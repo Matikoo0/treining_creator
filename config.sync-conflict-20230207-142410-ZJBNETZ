@@ -5,5 +5,4 @@ PATH=/app/data/excercise.db
 PATH=/error
 
 [MONGO]
-URL="mongodb://localhost:27017/"
-
+URL

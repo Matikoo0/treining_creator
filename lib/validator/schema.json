@@ -5,11 +5,9 @@
             "type": "object",
             "properties": {
                 "id": {"type": "string"},
-                "byWho": {"type": "string"},
-                "Who": {"type": "string"},
-                "ends": {"type": "string", "format": "date-time"},
-                "autoremail": {"type": "string", "format": "email"},
-                "useremail": {"type": "string", "format": "email"}
+                "trener_id": {"type": "string"},
+                "user_id": {"type": "string"},
+                "ends": {"type": "string", "format": "date-time"}
             },
             "required": ["id", "byWho", "Who", "ends", "autoremail", "useremail"]
         },

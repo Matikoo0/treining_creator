@@ -6,10 +6,9 @@ from models import db
 
 from routes import exc,tre,usr
 
+from lib import getConfig
 
-#inicaialize config file
-config = configparser.ConfigParser()
-config.read('../config')
+config=getConfig()
 
 #get path to database
 path = f"sqlite:///{config['DATABASE']['PATH']}"

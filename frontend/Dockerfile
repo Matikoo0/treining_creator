@@ -11,7 +11,7 @@ COPY  / /app/frontend/
 WORKDIR /app/frontend
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r ../requirements.txt
 
 # Run the command to start the application
 CMD ["python3", "main.py"]

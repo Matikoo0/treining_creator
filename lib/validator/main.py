@@ -1,10 +1,8 @@
 import jsonschema
 import os
-import configparser
+from lib import getConfig
 
-config = configparser.ConfigParser()
-config.read('../config')
-
+config=getConfig()
 ERRORPATH=config['ERROR']['PATH']
 
 def read_schema():
@@ -14,13 +12,14 @@ def read_schema():
     return schema
 
 
-def validate_json(json_data):
+def validate_json(json_data)-> bool:
     schema=read_schema()
     try:
         jsonschema.validate(json_data,schema)
     except jsonschema.ValidationError as e:
-        return False,e.message
-    return True,None
+        handle_error(e.message,json_data)
+        return False
+    return True
 
 def handle_error(error:str,json_data:str):
     global ERRORPATH
