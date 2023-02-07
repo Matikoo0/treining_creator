@@ -1,8 +1,0 @@
-[DATABASE]
-PATH=/app/data/excercise.db
-
-[ERROR]
-PATH=/error
-
-[MONGO]
-URL
