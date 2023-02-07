@@ -1,45 +1,31 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "ID"
-        },
-        "trener_id": {
-            "type": "ID"
-        },
-        "user_id": {
-            "type": "ID"
-        },
-        "ends": {
-            "type": "string",
-            "format": "date-time"
-        },
-        "weeks": {
+        "name": {"type": "string"},
+        "trener_id": {"type": "integer"},
+        "user_id": {"type": "integer"},
+        "ends": {"type": "string","format": "date-time"},
+        "trenings": {
             "type": "array",
-            "items": {
-                "type": "array",
-                "items": {
+            "minItems": 1,
+            "maxItems": 10,
+            "items":{
                     "type": "array",
                     "items": {
                         "type": "array",
                         "items": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "number"
-                                }
-                            }
+                            {"type": "integer"},
+                            {"type": "string"},
+                            {"type": "array", "items": {"type": "integer"}},
+                            {"type": "array", "items": {"type": "integer"}},
+                            {"type": "array", "items": {"type": "integer"}},
+                            {"type": "array", "items": {"type": "integer"}},
+                            {"type": "array", "items": {"type": "integer"}}
                         ]
                     }
-                }
             }
         }
     },
-    "required": ["id", "trener_id", "user_id", "ends", "weeks"]
+    "required": ["name", "trener_id", "user_id", "ends", "trenings"]
 }
